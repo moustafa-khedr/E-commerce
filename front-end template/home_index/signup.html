@@ -11,9 +11,8 @@
     <title>MK Technology</title>
   </head>
   <body>
-
   <!-- ----------------------------------------------------------------------------------------- -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">MK Store</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,70 +57,49 @@
     </div>
   </div>
 </nav>
-  <!--------------------------------------------------------------------------------------------->
-    <div>
-        <div class = "container mt-5 mb-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/product.png" class="card-img-top" alt="...">
-                </div>
-                  <div class="col-md-6">
-                    <h1> Product Title </h1>
-                    <h4> product category</h4>
+  <!-- ----------------------------------------------------------------------------------------- -->
 
-                    <p> Item Variant </p>
 
-                    <div class="">
-                      <form>
+        <div class = "container">
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <div class="signup-content">
+                  <div class="signup-form" style="margin-left: 100px;">
+                    <h2 class="form-title">Sign up</h2>
+                      <form method="POST" class="register-form mt-5" id="register-form">
                         <div class="form-group">
-                          <input type="value" class="form-control" id="exampleInputItem" aria-describedby="number of item" placeholder="1">
+                          <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                          <input type="text" name="name" id="name" placeholder="Username" style="width: 400px; height: 40px;">
                         </div>
-                        <button type="submit" class="btn btn-primary">Add To Cart </button>
+                        <div class="form-group">
+                          <label for="email"><i class="zmdi zmdi-email"></i></label>
+                          <input type="email" name="email" id="email" placeholder="Your Email" style="width: 400px; height: 40px;">
+                        </div>
+                        <div class="form-group">
+                          <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                          <input type="password" name="pass" id="pass" placeholder="Password" style="width: 400px; height: 40px;">
+                        </div>
+                        <div class="form-group">
+                          <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                          <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" style="width: 400px; height: 40px;">
+                        </div>
+                        <div class="form-group">
+                          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
+                          <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                          <input type="submit" name="signup" id="signup" class="form-submit" value="Register" style="width: 400px; height: 40px;">
+                        </div>
                       </form>
-                    </div>
-
-
                   </div>
-            </div>
-            <div class="row">
-              <p> Product Description</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image" style="height: 400px;">
+              </div>
             </div>
         </div>
-    </div>
-
-  <hr>
-  <div class="container mt-5 mb-5">
-    <h1> Leave Your Review</h1>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1" class="form-label"> </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="leave your review"></textarea>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">1</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">2</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">3 </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-        <label class="form-check-label" for="inlineRadio3">4 </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-        <label class="form-check-label" for="inlineRadio3">5 </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Add Your Review</button>
-  </div>
- <!-- ----------------------------------------------------------------------------------------- -->
-
-
-
 
 
 
@@ -139,3 +117,4 @@
     -->
   </body>
 </html>
+

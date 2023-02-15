@@ -1,0 +1,23 @@
+.all_products_pagination{
+    margin: 0 auto;
+}
+
+.login_form, .signup-form{
+    margin: 0 auto;
+}
+
+.reset_password_form, .edit_profile_form, .change_password_form, .forget_password_form, .check_out_form{
+    margin: 0 auto;
+}
+
+.order_success_info, .bg-success, .review_img_div{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.review_img{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}

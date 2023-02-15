@@ -7,12 +7,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>MK Technology</title>
   </head>
   <body>
   <!-- ----------------------------------------------------------------------------------------- -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">MK Store</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,40 +58,70 @@
   </div>
 </nav>
   <!-- ----------------------------------------------------------------------------------------- -->
-
-  <div class = "container mt-5">
-    <div class="row">
-        <h2 style="margin-left: 450px;"> Forgot Password </h2>
-      <div class="container d-flex flex-column">
-        <div class="row align-items-center justify-content-center min-vh-100">
-          <div class="col-12 col-md-8 col-lg-5" style="margin-bottom: 200px;">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <div class="mb-4">
-                  <h5>Forgot Password?</h5>
-                  <p class="mb-2">Enter your registered email ID to reset the password
-                  </p>
+    <div class = "container mt-5">
+        <div class="row">
+            <div class="login_form">
+              <h2> Login </h2>
+              <form>
+                <!-- Email input -->
+                <div class="form-outline mb-4 mt-5">
+                                    <label class="form-label" for="form2Example1">Email address</label>
+                  <input type="email" id="form2Example1" class="form-control" />
                 </div>
-                <form>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" class="form-control" name="email" placeholder="Enter Your Email"
-                      required="">
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example2">Password</label>
+                  <input type="password" id="form2Example2" class="form-control" />
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                      <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
                   </div>
-                  <div class="mb-3 d-grid">
-                    <button type="submit" class="btn btn-primary col-lg">
-                      Reset Password
-                    </button>
+
+                  <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
                   </div>
-                  <span>Don't have an account? <a href="sign-in.html">sign in</a></span>
-                </form>
-              </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Not a member? <a href="#!">Register</a></p>
+                  <p>or sign up with:</p>
+                  <!-- Facebook -->
+                  <a class="btn text-white" style="background-color: #3b5998;" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <!-- Google -->
+                  <a class="btn text-white" style="background-color: #dd4b39;" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                  </a>
+
+                  <!-- Twitter -->
+                  <a class="btn text-white" style="background-color: #55acee;" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+
+                  <!-- Github -->
+                  <a class="btn text-white" style="background-color: #333333;" href="#!" role="button">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+
 
 
     <!-- Optional JavaScript; choose one of the two! -->

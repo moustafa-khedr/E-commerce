@@ -12,6 +12,7 @@ class Product(models.Model):
     PRDCategory = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
     PRDBBrand = models.ForeignKey('settings.Brand', on_delete=models.CASCADE, blank=True, null=True)
     PRDDescription = models.TextField(max_length=300, verbose_name=_("product description"))
+    PRDImage = models.ImageField(upload_to='product/', blank=True, null=True, verbose_name=_("image"),  default='default.jpg')
     PRDPrice = models.IntegerField(blank=True, null=True, verbose_name=_("product price"))
     PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("product cost"))
     PRDTime_created = models.DateTimeField(verbose_name=_("product created"))

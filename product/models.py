@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
 
 
@@ -13,9 +14,13 @@ class Product(models.Model):
     PRDPrice = models.IntegerField(blank=True, null=True, verbose_name=_("product price"))
     PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("product cost"))
     PRDTime_created = models.DateTimeField(verbose_name=_("product created"))
-
+    PRDSlug = models.SlugField(verbose_name=_("slug"), blank=True, null=True)
     # PRDImage =
 
+    def save(self, *args, **kwargs):
+        self.PRDSlug = slugify(self.PRDName)
+        super(Product,self).save(*args,**kwargs)
+    
     def __str__(self):
         return self.PRDName
 

@@ -9,6 +9,6 @@ def product_list(request):
 
 
 def product_detail(request, slug):
-    product_detail = Product.objects.get(slug=slug)
+    product_detail = Product.objects.get(PRDSlug=slug)
 
     return render(request, 'Product/product_detail.html', {'product_detail':product_detail})

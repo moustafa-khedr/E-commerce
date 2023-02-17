@@ -1,2 +1,174 @@
-<h1>hallo world</h1>
-<p>product : {{product_detail.PRDSlug}}</p>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>MK Technology</title>
+  </head>
+  <body>
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">MK Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Register</a>
+            </li>
+          </ul>
+          <form class="d-flex" style="margin-left: 450px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="m-3">
+           <a class="nav-link" href="#" style="margin-inline-end: -46px;">Cart</a>
+        </div>
+        <div class="m-3">
+           <a class="nav-link" href="#">Profile</a>
+        </div>
+      </div>
+    </nav>
+  <!--------------------------------------------------------------------------------------------->
+    <div>
+        <div class = "container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/product.png" class="card-img-top" alt="...">
+                </div>
+                  <div class="col-md-6">
+                    <h1> Product Title </h1>
+                    <h4> product category</h4>
+
+                    <p> Item Variant </p>
+
+                    <div class="">
+                      <form>
+                        <div class="form-group">
+                          <input type="value" class="form-control" id="exampleInputItem" aria-describedby="number of item" placeholder="1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add To Cart </button>
+                      </form>
+                    </div>
+
+
+                  </div>
+            </div>
+            <div class="row mt-5">
+              <h3> Product Description</h3>
+              <p class="p-3"> This invoice is issued upon payment.
+                   Insurance policy will be activated on the
+                  expected date that was registered in
+                  MOFA’s Visa Issuance System (Enjaz).
+                   Upon policy activation, an electronic
+                  copy of the insurance policy schedule
+                  and electronic medical card will be sent
+                  to your e-mail registered at Enjaz.
+                   Policy cannot be canceled without
+                  canceling Visit Visa from the Saudi
+                  Embassy or Consulate office.
+                   To refund policy fees, please contact us
+                  on the provided contact information.
+                   In case Visitor has entered Saudi Arabia
+                  before the expected date, please contact
+                  us to activate the insurance policy.
+                   In case Visa was issued after the
+                  expected date, insurance policy will be
+                  activated on the same date the Visa was
+                  issued </p>
+            </div>
+        </div>
+    </div>
+
+  <hr>
+  <div class="container mt-5 mb-5">
+    <h1> Leave Your Review</h1>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="form-label"> </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="leave your review"></textarea>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <label class="form-check-label" for="inlineRadio3">3 </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+        <label class="form-check-label" for="inlineRadio3">4 </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+        <label class="form-check-label" for="inlineRadio3">5 </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Your Review</button>
+  </div>
+  <hr>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3 review_img_div">
+        <img class="review_img" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Card image cap">
+      </div>
+      <div class="col-md-9">
+        <h3 class="p-3">User Name</h3>
+        <p class="p-3"> cannot be canceled without canceling Visit Visa from the Saudi Embassy or Consulate office.  To refund policy fees, please contact us on the provided contact information.  In case Visitor has entered Saudi Arabia before the expected date, please contact us t </p>
+      </div>
+    </div>
+  </div>
+ <!-- ----------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

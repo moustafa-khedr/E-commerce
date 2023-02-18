@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def product_list(request):
     product_list = Product.objects.all()
-    paginator = Paginator(product_list, 2)
+    paginator = Paginator(product_list, 10)
     page_number = request.GET.get('page')
     try:
         page_obj= paginator.get_page(page_number)

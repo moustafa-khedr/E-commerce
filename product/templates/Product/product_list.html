@@ -87,7 +87,7 @@
                       
                     
                     <div class="card-body">
-                      <h5 class="card-title">{{product}}</h5>
+                      <h5 class="card-title"><a href="{% url 'products:product_detail' product.PRDSlug %}">{{product}}</a></h5>
                       <p class="card-text">{{product.PRDDescription}}</p>
                       <a href="#" class="btn btn-primary">Add To Cart</a>
                     </div>

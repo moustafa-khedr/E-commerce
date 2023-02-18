@@ -64,11 +64,16 @@
         <div class = "container mt-5 mb-5">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="img/product.png" class="card-img-top" alt="...">
+
+                  {% if product_detail.PRDImage %}
+                    <img src="{{product_detail.PRDImage.url}}" class="card-img-top" alt="..." style="max-height: 400px;min-height: 400px;max-width: 500px;min-width: 500px;">
+                  {% else %}
+                    <img src="{% static 'img/default.png' %}" class="card-img-top" alt="..." style="max-height: 400px;min-height: 400px;max-width: 500px;min-width: 500px;">
+                  {% endif %}
                 </div>
                   <div class="col-md-6">
-                    <h1> Product Title </h1>
-                    <h4> product category</h4>
+                    <h1> {{product_detail.PRDName}} </h1>
+                    <h4> {{product_detail.PRDCategory}}</h4>
 
                     <p> Item Variant </p>
 
@@ -86,26 +91,9 @@
             </div>
             <div class="row mt-5">
               <h3> Product Description</h3>
-              <p class="p-3"> This invoice is issued upon payment.
-                   Insurance policy will be activated on the
-                  expected date that was registered in
-                  MOFA’s Visa Issuance System (Enjaz).
-                   Upon policy activation, an electronic
-                  copy of the insurance policy schedule
-                  and electronic medical card will be sent
-                  to your e-mail registered at Enjaz.
-                   Policy cannot be canceled without
-                  canceling Visit Visa from the Saudi
-                  Embassy or Consulate office.
-                   To refund policy fees, please contact us
-                  on the provided contact information.
-                   In case Visitor has entered Saudi Arabia
-                  before the expected date, please contact
-                  us to activate the insurance policy.
-                   In case Visa was issued after the
-                  expected date, insurance policy will be
-                  activated on the same date the Visa was
-                  issued </p>
+              <div class="row mt-5 ml-5">
+                <p class="p-3" style="margin-left: -300px;"> {{product_detail.PRDDescription}} </p>
+              </div>
             </div>
         </div>
     </div>
@@ -140,17 +128,6 @@
       <button type="submit" class="btn btn-primary">Add Your Review</button>
   </div>
   <hr>
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-md-3 review_img_div">
-        <img class="review_img" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Card image cap">
-      </div>
-      <div class="col-md-9">
-        <h3 class="p-3">User Name</h3>
-        <p class="p-3"> cannot be canceled without canceling Visit Visa from the Saudi Embassy or Consulate office.  To refund policy fees, please contact us on the provided contact information.  In case Visitor has entered Saudi Arabia before the expected date, please contact us t </p>
-      </div>
-    </div>
-  </div>
  <!-- ----------------------------------------------------------------------------------------- -->
 
 

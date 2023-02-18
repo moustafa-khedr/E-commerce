@@ -14,10 +14,7 @@ def product_list(request):
     except EmptyPage:  
         page_obj = paginator.page(paginator.num_pages)
         
-    return render(request, 'Product/product_list.html',
-                  {'product_list':page_obj,
-                   }
-                  )
+    return render(request, 'Product/product_list.html',{'product_list':page_obj,})
 
 
 def product_detail(request, slug):

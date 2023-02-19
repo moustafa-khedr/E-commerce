@@ -27,7 +27,7 @@ def product_shop(request):
     except EmptyPage:  
         page_obj = paginator.page(paginator.num_pages)
         
-    return render(request, 'Product/shop.html',{'product_list':page_obj,})
+    return render(request, 'Product/shop.html',{'product_shop':page_obj,})
 
 def product_detail(request, slug):
     product_detail = Product.objects.get(PRDSlug=slug)

@@ -17,8 +17,11 @@ class Product(models.Model):
     PRDDiscountprice = models.IntegerField(blank=True, null=True, verbose_name=_("product Discountprice"))
     PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("product cost"))
     PRDTime_created = models.DateTimeField(verbose_name=_("product created"))
+    
     PRDSlug = models.SlugField(blank=True, null=True, verbose_name=_("slug"))
-    # PRDImage =
+    PRDISNew = models.BooleanField(default=True, verbose_name=_("product is new"))
+    PRDISBestSeller = models.BooleanField(default=False, verbose_name=_("product is best_saller"))
+
 
     def save(self, *args, **kwargs):
         self.PRDSlug = slugify(self.PRDName)

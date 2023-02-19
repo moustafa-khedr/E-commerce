@@ -76,5 +76,39 @@
             </div>
             <!-- End Nav Card -->
         </div>
+        <!-- paginator -->
+        <div class = "container mt-5 mr-5.5">
+            {% if product_shop.has_other_pages %}     
+                <div class="row">
+                    <div class="all_products_pagination" style="margin: auto;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                                
+                                <li class="page-item">
+                                    {% if product_shop.has_previous %}
+                                        <li class="page-item active"><a class="page-link" href="?page={{product_shop.previous_page_number}}" tabindex="-1" aria-disabled="true">Previous</a></li>
+                                    {% else %}
+                                        <li class="page-item disabled"><a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a></li>
+                                    {% endif %}
+                                </li>
+
+                                    {% for i in product_shop.paginator.page_range %}
+                                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                    {% endfor %}
+
+                                <li class="page-item">
+                                    {% if product_shop.has_next %}
+                                        <li class="page-item active"><a class="page-link" href="?page={{product_shop.next_page_number}}">Next</a></li>
+                                    {% else %}
+                                        <li class="page-item disabled"><p class="page-link" href="">Next</p></li>
+                                    {% endif %}
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </section>
 {% endblock body1 %}

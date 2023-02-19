@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Watch Shop</h2>
+                                <h2>Technology Shop</h2>
                             </div>
                         </div>
                     </div>
@@ -21,58 +21,75 @@
         <!--================Single Product Area =================-->
         <div class="product_image_area">
             <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                <div class="product_img_slide owl-carousel">
-                    <div class="single_product_img">
-                        {% if product_detail.PRDImage %}
-                            <img src="{{ product_detail.PRDImage.url }}" alt="">
-                        {% else %}                           
-                            <img src="{% static 'assets/img/default.png' %}" alt="">
-                        {% endif %}
-                    </div>
-                    <div class="single_product_img">
-                        <img src="{% static 'assets/img/gallery/gallery01.png' %}" alt="#" class="img-fluid">
-                    </div>
-                    <div class="single_product_img">
-                        <img src="{% static 'assets/img/gallery/gallery1.png' %}" alt="#" class="img-fluid">
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-8">
-                <div class="single_product_text text-center">
-                    <h3>{{product_detail.PRDName}}</h3><br>
-                    <h4>Category : {{product_detail.PRDCategory}}</h4><br>
-                    <h4>Brand : {{product_detail.PRDBBrand}}</h4>
-                    <h3>Description</h3>
-                        <p>{{product_detail.PRDDescription}}</p>
-                    <div class="card_area">
-                        <div class="product_count_area">
-                            <p>Quantity</p>
-                            <div class="product_count d-inline-block">
-                                <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                                <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-                            </div>
-                            <p class="lead">
-                                {% if product_detail.PRDDiscountprice > 0 %}
-                                    <span class="mr-1">
-                                        <del>${{product_detail.PRDPrice}}</del>
-                                    </span>
-                                    <span>${{product_detail.PRDDiscountprice}}</span>
-                                {% else %}
-                                    <span>${{product_detail.PRDPrice}}</span>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="product_img_slide owl-carousel">
+                            <div class="single_product_img">
+                                {% if product_detail.PRDImage %}
+                                    <img src="{{ product_detail.PRDImage.url }}" alt="" style="width: 1140px; height: 760px;">
+                                {% else %}                           
+                                    <img src="{% static 'assets/img/default.png' %}" alt="" style="width: 1140px; height: 760px;">
                                 {% endif %}
-                            </p>
-                            
+                            </div>
+                            <div class="single_product_img">
+                                <img src="{% static 'assets/img/gallery/gallery01.png' %}" alt="#" class="img-fluid">
+                            </div>
+                            <div class="single_product_img">
+                                <img src="{% static 'assets/img/gallery/gallery1.png' %}" alt="#" class="img-fluid">
+                            </div>
                         </div>
-                    <div class="add_to_cart">
-                        <a href="#" class="btn_3">add to cart</a>
                     </div>
+                    <div class="col-lg-8">
+                        <div class="single_product_text text-center">
+                            <h3>{{product_detail.PRDName}}</h3><br>
+                            <h4>Category : {{product_detail.PRDCategory}}</h4><br>
+                            <h4>Brand : {{product_detail.PRDBBrand}}</h4>
+                            <h3>Description</h3>
+                                <p>{{product_detail.PRDDescription}}</p>
+                            <div class="mb-3">
+                                {% if product_detail.PRDDiscountprice > 0 %}
+                                    <a href="">
+                                        <button type="button" class="btn btn-warning  mr-1">sale</button>
+                                    </a>    
+                                {% endif %}
+                                {% if product_detail.PRDISNew %}
+                                    <a href="">
+                                        <button type="button" class="btn btn-primary mr-1">New</button>
+                                    </a>
+                                {% endif %}
+                                {% if product_detail.PRDISBestSeller %}
+                                    <a href="">
+                                        <button type="button" class="btn btn-success mr-1">Bestseller</button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="card_area">
+                                <div class="product_count_area">
+                                    <p>Quantity</p>
+                                    <div class="product_count d-inline-block">
+                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                    </div>
+                                    <p class="lead">
+                                        {% if product_detail.PRDDiscountprice > 0 %}
+                                            <span class="mr-1">
+                                                <del>${{product_detail.PRDPrice}}</del>
+                                            </span>
+                                            <span>${{product_detail.PRDDiscountprice}}</span>
+                                        {% else %}
+                                            <span>${{product_detail.PRDPrice}}</span>
+                                        {% endif %}
+                                    </p>
+                                    
+                                </div>
+                            <div class="add_to_cart">
+                                <a href="#" class="btn_3">add to cart</a>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
         </div>
         <!--================End Single Product Area =================-->

@@ -14,6 +14,7 @@ class Product(models.Model):
     PRDDescription = models.TextField(max_length=300, verbose_name=_("product description"))
     PRDImage = models.ImageField(upload_to='product/', blank=True, null=True, verbose_name=_("image"),  default='default.jpg')
     PRDPrice = models.IntegerField(blank=True, null=True, verbose_name=_("product price"))
+    PRDDiscountprice = models.IntegerField(blank=True, null=True, verbose_name=_("product Discountprice"))
     PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("product cost"))
     PRDTime_created = models.DateTimeField(verbose_name=_("product created"))
     PRDSlug = models.SlugField(blank=True, null=True, verbose_name=_("slug"))

@@ -16,6 +16,18 @@ def product_list(request):
         
     return render(request, 'Product/product_list.html',{'product_list':page_obj,})
 
+def product_shop(request):
+    product_shop = Product.objects.all()
+    paginator = Paginator(product_shop, 10)
+    page_number = request.GET.get('page')
+    try:
+        page_obj= paginator.get_page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:  
+        page_obj = paginator.page(paginator.num_pages)
+        
+    return render(request, 'Product/shop.html',{'product_list':page_obj,})
 
 def product_detail(request, slug):
     product_detail = Product.objects.get(PRDSlug=slug)

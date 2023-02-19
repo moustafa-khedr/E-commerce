@@ -54,7 +54,17 @@
                                 <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
                                 <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                             </div>
-                            <p>${{product_detail.PRDPrice}}</p>
+                            <p class="lead">
+                                {% if product_detail.PRDDiscountprice > 0 %}
+                                    <span class="mr-1">
+                                        <del>${{product_detail.PRDPrice}}</del>
+                                    </span>
+                                    <span>${{product_detail.PRDDiscountprice}}</span>
+                                {% else %}
+                                    <span>${{product_detail.PRDPrice}}</span>
+                                {% endif %}
+                            </p>
+                            
                         </div>
                     <div class="add_to_cart">
                         <a href="#" class="btn_3">add to cart</a>

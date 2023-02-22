@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                     <div class="popular-caption">
-                                        <h3><a href="{% url 'products:product_detail' product.PRDSlug %}">{{product.PRDName}}</a></h3>
+                                        <h3><a href="{{ product.get_absolute_url }}">{{product.PRDName}}</a></h3>
                                         <div class="row" style="margin-left: 0px;">
                                             {% if product.PRDDiscountprice > 0 %}
                                                 <a href="">

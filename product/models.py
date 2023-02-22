@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
@@ -8,17 +9,17 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
-    PRDName = models.CharField(max_length=100, verbose_name=_("product name"))
-    PRDCategory = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
-    PRDBBrand = models.ForeignKey('settings.Brand', on_delete=models.CASCADE, blank=True, null=True)
-    PRDDescription = models.TextField(max_length=300, verbose_name=_("product description"))
+    PRDName = models.CharField(max_length=100, verbose_name=_("name"))
+    PRDCategory = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True, verbose_name=_("category"))
+    PRDBBrand = models.ForeignKey('settings.Brand', on_delete=models.CASCADE, blank=True, null=True, verbose_name=_("brand"))
+    PRDDescription = models.TextField(max_length=300, verbose_name=_("description"))
     PRDImage = models.ImageField(upload_to='product/', blank=True, null=True, verbose_name=_("image"),  default='default.jpg')
-    PRDPrice = models.IntegerField(blank=True, null=True, verbose_name=_("product price"))
-    PRDDiscountprice = models.IntegerField(blank=True, null=True, verbose_name=_("product Discountprice"))
-    PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("product cost"))
-    PRDTime_created = models.DateTimeField(verbose_name=_("product created"))
+    PRDPrice = models.IntegerField(blank=True, null=True, verbose_name=_("price"))
+    PRDDiscountprice = models.IntegerField(blank=True, null=True, verbose_name=_("Discountprice"))
+    PRDCost = models.IntegerField(blank=True, null=True, verbose_name=_("cost"))
+    PRDTime_created = models.DateTimeField(verbose_name=_("created"))
     
-    PRDSlug = models.SlugField(blank=True, null=True, verbose_name=_("slug"))
+    PRDSlug = models.SlugField(blank=True, null=True, verbose_name=_("url"))
     PRDISNew = models.BooleanField(default=True, verbose_name=_("product is new"))
     PRDISBestSeller = models.BooleanField(default=False, verbose_name=_("product is best_saller"))
 
@@ -26,7 +27,15 @@ class Product(models.Model):
     def save(self, *args, **kwargs):
         self.PRDSlug = slugify(self.PRDName)
         super(Product,self).save(*args,**kwargs)
-    
+        
+    def get_absolute_url(self):
+        return reverse("products:product_detail", kwargs={"slug": self.PRDSlug})
+        
+        
+    class Meta:
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')
+        
     def __str__(self):
         return self.PRDName
 
